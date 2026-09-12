@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAzeem Smart Electricity Calculator</title>
+    
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"> Electric <span class="logos">Wise</span></div>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode"> Dark Mode</button>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <h1>Take Control of Your Electricity</h1>
+            <p>Know what you use. Know what you spend. Save more.</p>
+            <a href="#electricity-rate" class="btn-primary">Calculate My Usage</a>
+        </section>
+
+        <!--  ELECTRICITY RATE SECTION -->
+        <section id="electricity-rate">
+            <h2> Set Your Electricity Rate</h2>
+            <label for="rate-input">Electricity Price per kWh:</label>
+            <div class="input-group">
+                <span class="currency">₦</span>
+                <input type="number" id="rate-input" placeholder="e.g., 225" min="0" step="0.01">
+                <span class="unit">per kWh</span>
+            </div>
+        </section>
+
+        <!-- ADD APPLIANCE SECTION -->
+        <section id="add-appliance">        
+            <h2>Add an Appliance</h2>             
+            <form id="appliance-form">                                            
+                
+                <label for="appliance-name"> Appliance Name </label>
+                
+                <input type="text" id="appliance-name" list="appliance-options" placeholder="e.g., Television" required>
+                <datalist id="appliance-options">
+                    <option value="Light Bulb">
+                    <option value="Fan">
+                    <option value="Television">
+                    <option value="Air Conditioner">
+                    <option value="Refrigerator">
+                    <option value="Laptop">
+                    <option value="Electric Iron">
+                    <option value="Electric Kettle">
+                    <option value="Microwave">
+                </datalist>
+
+                <label for="watts">Power Rating (Watts)</label>
+                <input type="number" id="watts" placeholder="e.g., 100" min="1" required>
+
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" placeholder="e.g., 1" min="1" value="1" required>
+
+                <label for="hours">Hours Used Per Day</label>
+                <input type="number" id="hours" placeholder="e.g., 5" min="0.5" max="24" step="0.5" required>
+
+                <button type="submit" class="btn-primary">+ Add Appliance</button>
+            </form>
+        </section>
+
+        <!--  DASHBOARD SECTION -->
+        <section id="dashboard">
+            <h2> Your Electricity Dashboard</h2>
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3> Daily Usage</h3>
+                    <p id="daily-kwh">0.00 kWh</p>
+                </div>
+                <div class="card">
+                    <h3> Daily Cost</h3>
+                    <p id="daily-cost">₦0.00</p>
+                </div>
+                <div class="card">
+                    <h3> Weekly Cost</h3>
+                    <p id="weekly-cost">₦0.00</p>
+                </div>
+                <div class="card">
+                    <h3> Estimaed Mothly Cost </h3>
+                    <p id="monthly-cost">₦0.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MY APPLIANCES LIST -->                
+        <section id="my-appliances">
+            <h2> My Appliances</h2>
+            <!-- JavaScript will add <li> items inside this <ul> -->
+            <ul id="appliance-list">
+                <li class="empty-message">No appliances added yet. Add one above!</li>
+            </ul>
+            <button id="reset-btn" class="btn-secondary">Reset Calculator</button>
+        </section>
+
+        <!-- HIGHEST CONSUMER & SMART MESSAGE -->
+        <section id="insights">
+            <div class="card" id="highest-consumer">
+                <h3> Highest Energy Consumer</h3>
+                <p id="highest-consumer-text">Add appliances to see this.</p>
+            </div>
+            <div class="card" id="smart-message">
+                <h3> Smart Usage Message</h3>
+                <p id="smart-message-text">Add appliances to get your personalized message.</p>
+            </div>
+        </section>
+
+        <!-- ELECTRICITY SAVING TIPS -->
+        <section id="saving-tips">
+            <h2> Electricity Saving Tips</h2>
+            <ul>
+                <li>Turn off lights when they are not needed.</li>
+                <li>Unplug devices that are not being used (they still draw current).</li>
+                <li>Reduce unnecessary air-conditioner usage.</li>
+                <li>Use energy efficient LED bulbs instead of old incandescent bulbs.</li>
+                <li>Take advantage of natural lighting during the day.</li>
+                <li> Use energy efficient tv instead of old tv </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 webAzeem. Take control of your energy.</p>
+    </footer>
+
+    
+    <!-- The 'defer' attribute ensures the HTML loads completely before the JS runs -->
+    <script src="script2.js" defer></script>
+
+</body>
+</html>
